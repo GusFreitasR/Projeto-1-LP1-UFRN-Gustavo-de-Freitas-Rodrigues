@@ -55,13 +55,14 @@ void menu_atendente() // Fazendo o menu com as opções do(a) atendente
             break;
         case 0:
             cout << "Saindo..." << endl;
+            return;
             break;
         default:
             cout << "Opção inválida." << endl;
             break;
         }
     }
-    return;
+    
 }
 
 void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
