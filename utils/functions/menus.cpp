@@ -96,12 +96,11 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
             cin >> id;
             cout << "Qual o nome do medico(a)? " << endl;
             cin.ignore();
-
             getline(cin, name_medico);
             cout << "Otimo! Agora, Qual a especialidade dele(a)?" << endl;
             cin.ignore();
             getline(cin, especialidade);
-            cin.ignore();
+    
             add_medico(id, name_medico, especialidade);
             break;
         case 4:

@@ -6,7 +6,7 @@
 #include <set>
 
 using namespace std;
-std::ofstream f_medicos("medicos.txt", ios::app | ios::out); // Cria um novo arquivo para a escrita
+std::ofstream f_medicos("medicos.txt", ios::out | ios::app); // Cria um novo arquivo para a escrita
 
 map<long long int, Medico> medicos;
 
@@ -34,7 +34,6 @@ void carregar_medicos(){ // Carrega os valores dos médicos que já estavam no a
 }
 
 void add_medico(long long int id, string name, string especialidade){ // Adiciona um novo médico ao arquivo
-    if(f_medicos.is_open()){ // Verifica se dá pr abrir o arquivo
         f_medicos << id << endl;
         f_medicos << name << endl;
         f_medicos << especialidade << endl;
@@ -42,9 +41,7 @@ void add_medico(long long int id, string name, string especialidade){ // Adicion
         medicos[id].especialidade = especialidade;
         f_medicos.close();
         cout << "Medico cadastrado ao sistema!" << endl;
-    }else{
-        cout << "Erro ao tentar abrir o arquivo." << endl;
-    }
+   
 }
 
 void list_medicos(){ // Listando todos os médicos do sistema
