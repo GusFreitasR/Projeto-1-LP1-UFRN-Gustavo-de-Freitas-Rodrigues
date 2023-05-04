@@ -9,18 +9,19 @@ int main()
     cout << "### Hospital JANIHERYSON ###\n";
     cout << "#############################\n\n";
 
-    // Escolhendo o perfil que o usuário quer acessar;
-    cout << "Escolha o perfil que voce deseja acessar" << endl;
-    cout << "1. Atendente" << endl;
-    cout << "2. Gestor" << endl;
-    cout << "0. Sair do hospital" << endl;
+
+   
     int opt;
-    
+
     string senha;
     carry_dados(); // Carregando os dados dos medicos.txt e agenda.txt
     do
     {
-        cin>> opt;
+        cout << "Escolha o perfil que voce deseja acessar" << endl;    // Escolhendo o perfil que o usuário quer acessar;
+        cout << "1. Atendente" << endl;
+        cout << "2. Gestor" << endl;
+        cout << "0. Sair do hospital" << endl;
+        cin >> opt;
         switch (opt) // Escolhendo o menu a ser mostrado;
         {
         case 1:
@@ -33,18 +34,24 @@ int main()
             cout << "Digite a senha : ";
             cin.ignore();
             getline(cin, senha);
-            if(senha == "admin"){
+            if (senha == "admin")
+            {
                 menu_gestor();
-            }else{
+            }
+            else
+            {
                 cout << "Senha incorreta!!!" << endl;
                 break;
             }
             break;
         default:
-            cout << "Digite uma opcao valida!";
+            if(opt != 0){
+                cout << "Digite uma opcao valida!";
+            }
+
             break;
         }
-    }while (opt != 0);
+    } while (opt != 0);
 
     return 0;
 }

@@ -36,21 +36,20 @@ void menu_atendente() // Fazendo o menu com as opções do(a) atendente
             break;
         case 3:
             cout << "----------------------------------------------------" << endl;
-            cout << "Primeiro, qual o seu cpf que deseja marcar consulta? Apenas números" << endl;
+            cout << "Primeiro, qual o seu cpf que deseja marcar consulta? Apenas numeros" << endl;
             cin >> id;
             cin.ignore();
-            cout << "Com qual médico você deseja marcar horário? " << endl;
+            cout << "Com qual medico você deseja marcar horario? " << endl;
             getline(cin, name_medico);
-            cout << "Ótimo! Agora, em que horário deseja se consultar? " << endl;
+            cout << "Otimo! Agora, em que horario deseja se consultar? " << endl;
             cin.ignore();
             getline(cin, horario);
             add_agendamento(id, name_medico, horario);
             break;
         case 4:
-            cout << "Qual médico você desejaria verificar os horários? " << endl;
+            cout << "Qual medico você desejaria verificar os horarios? " << endl;
             cin.ignore();
             getline(cin, name_med);
-            cin.ignore();
             show_agendamento_by_name(name_med);
             break;
         case 0:
@@ -58,7 +57,7 @@ void menu_atendente() // Fazendo o menu com as opções do(a) atendente
             return;
             break;
         default:
-            cout << "Opção inválida." << endl;
+            cout << "Opçao invalida." << endl;
             break;
         }
     }
@@ -71,14 +70,14 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
     while (opcao != 0)
     {
         cout << "----------------------Menu do gestor----------------------" << endl;
-        cout << "1. Listar médicos" << endl;
+        cout << "1. Listar medicos" << endl;
         cout << "2. Listar especialidades" << endl;
-        cout << "3. Adicionar um novo médico" << endl;
-        cout << "4. Ver agendamentos de médico" << endl;
-        cout << "5. Alterar especialidade de um médico" << endl;
-        cout << "6. Demitir um médico " << endl;
+        cout << "3. Adicionar um novo medico" << endl;
+        cout << "4. Ver agendamentos de medico" << endl;
+        cout << "5. Alterar especialidade de um medico" << endl;
+        cout << "6. Demitir um medico " << endl;
         cout << "0. Sair" << endl;
-        cout << "Escolha uma opção: ";
+        cout << "Escolha uma opcao: ";
         cin >> opcao;
         long long int id;
         string name_medico, especialidade;
@@ -93,12 +92,13 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
             break;
         case 3:
             cout << "----------------------------------------------------" << endl;
-            cout << "Primeiro, qual a identificação do médico (CRM):" << endl;
+            cout << "Primeiro, qual a identificacao do medico (CRM):" << endl;
             cin >> id;
-            cout << "Qual o nome do médico? " << endl;
+            cout << "Qual o nome do medico(a)? " << endl;
             cin.ignore();
+
             getline(cin, name_medico);
-            cout << "Ótimo! Agora, em que horário deseja se consultar? " << endl;
+            cout << "Otimo! Agora, Qual a especialidade dele(a)?" << endl;
             cin.ignore();
             getline(cin, especialidade);
             cin.ignore();
@@ -106,13 +106,13 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
             break;
         case 4:
 
-            cout << "Qual médico você desejaria verificar os horários? " << endl;
+            cout << "Qual medico você desejaria verificar os horarios? " << endl;
             cin.ignore();
             getline(cin, name_med);
             show_agendamento_by_name(name_med);
             break;
         case 5:
-            cout << "Qual o CRM do médico que você deseja alterar a especialidade?" << endl;
+            cout << "Qual o CRM do medico que você deseja alterar a especialidade?" << endl;
             cin >> id;
             cout << "Para qual especialidade você deseja alterar?" << endl;
             cin.ignore();
@@ -120,7 +120,7 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
             atualizar_especialidade(id, especialidade);
             break;
         case 6:
-            cout << "Digite o CRM do médico você deseja demitir?" << endl;
+            cout << "Digite o CRM do medico você deseja demitir?" << endl;
             cin >> id;
             cin.ignore();
             delete_medico(id);
@@ -129,7 +129,7 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
             cout << "Saindo..." << endl;
             break;
         default:
-            cout << "Opção inválida." << endl;
+            cout << "Opcao invalida." << endl;
             break;
         }
     }

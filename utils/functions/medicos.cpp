@@ -8,7 +8,7 @@
 using namespace std;
 std::ofstream f_medicos("medicos.txt", ios::app | ios::out); // Cria um novo arquivo para a escrita
 
-map<long int, Medico> medicos;
+map<long long int, Medico> medicos;
 
 void carregar_medicos(){ // Carrega os valores dos médicos que já estavam no arquivo antes da execução do programa.
   fstream new_file;
@@ -27,15 +27,15 @@ void carregar_medicos(){ // Carrega os valores dos médicos que já estavam no a
   read_file.close();
   
   for(int i = 0; i< vetor.size(); i+=3){
-    long int id = stoll(vetor[i]);
+    long long int id = stoll(vetor[i]);
     medicos[id].nome = vetor[i+1];
     medicos[id].especialidade = vetor[i+2];
   }
 }
 
-void add_medico(long int id, string name, string especialidade){ // Adiciona um novo médico ao arquivo
+void add_medico(long long int id, string name, string especialidade){ // Adiciona um novo médico ao arquivo
     if(f_medicos.is_open()){ // Verifica se dá pr abrir o arquivo
-        f_medicos <<  id << endl;
+        f_medicos << id << endl;
         f_medicos << name << endl;
         f_medicos << especialidade << endl;
         medicos[id].nome = name;
@@ -92,7 +92,7 @@ void atualizar_medicos(){ // Atualizar o arquivo de médicos para atualizar a es
   }
 }
 
-void atualizar_especialidade(long int id_med, string new_spec){ // Atualizando a especialidade de um médico
+void atualizar_especialidade(long long int id_med, string new_spec){ // Atualizando a especialidade de um médico
     for(auto i: medicos){
         if(i.first == id_med){
             i.second.especialidade = new_spec;
@@ -105,7 +105,7 @@ void atualizar_especialidade(long int id_med, string new_spec){ // Atualizando a
     cout << "Médico não foi encontrado!" << endl;
 }
 
-void delete_medico( long int id_med){ // Excludino um médio pelo id
+void delete_medico( long long int id_med){ // Excludino um médio pelo id
   for(auto i : medicos){
     if(i.first == id_med){
       medicos.erase(id_med);

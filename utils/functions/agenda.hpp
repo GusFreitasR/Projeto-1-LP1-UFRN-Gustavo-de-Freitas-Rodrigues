@@ -4,7 +4,7 @@
 
 
 void carregar_agenda();
-void add_agendamento(long int id, std::string name_med, std::string horario);
+void add_agendamento(long long int id, std::string name_med, std::string horario);
 void show_agendamento_by_name(std::string name_med);
 
 #endif

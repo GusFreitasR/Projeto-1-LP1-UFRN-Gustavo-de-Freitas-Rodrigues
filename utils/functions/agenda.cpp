@@ -8,7 +8,7 @@ std::ofstream f_agenda("agenda.txt", std::ios::app | std::ios::out); // Cria um 
 
 using namespace std;
 
-map<long int, Agenda> agenda;
+map<long long int, Agenda> agenda;
 
 void carregar_agenda()
 { // Carrega os valores dos médicos que já estavam no arquivo antes da execução do programa.
@@ -30,13 +30,13 @@ void carregar_agenda()
 
     for (int i = 0; i < vetor.size(); i += 3)
     {
-        long int id = stoll(vetor[i]);
+        long long int id = stoll(vetor[i]);
         agenda[id].nome_medico = vetor[i + 1];
         agenda[id].horario = vetor[i + 2];
     }
 }
 
-void add_agendamento(long int id, string name_med, string horario)
+void add_agendamento(long long int id, string name_med, string horario)
 { // Adiciona um novo médico ao arquivo
     if (f_agenda.is_open())
     { // Verifica se dá pr abrir o arquivo
