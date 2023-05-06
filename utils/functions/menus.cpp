@@ -123,12 +123,14 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
             cin.ignore();
             getline(cin, especialidade);
             atualizar_especialidade(id, especialidade);
+            
             break;
         case 6:
             cout << "Digite o CRM do medico você deseja demitir?" << endl;
             cin >> id;
             cin.ignore();
             delete_medico(id);
+            atualizar_medicos();
             break;
         case 0:
             cout << "Saindo..." << endl;

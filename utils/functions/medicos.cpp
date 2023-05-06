@@ -78,7 +78,7 @@ void count_specs(){ // Mostrando todas as especialidades do sistema juntamente c
 
 void atualizar_medicos(){ // Atualizar o arquivo de médicos para atualizar a especialidade
   fstream arquivo;
-  arquivo.open(".../medicos.txt", ios::out);
+  arquivo.open("medicos.txt", ios::out);
   
   for(auto i : medicos){
     arquivo << i.first << endl;

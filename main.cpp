@@ -30,7 +30,7 @@ int main()
             break;
 
         case 2:
-            cout << "Para acessar o menu do gestor, você precisa de uma senha." << endl;
+            cout << "Para acessar o menu do gestor, voce precisa de uma senha." << endl;
             cout << "Digite a senha : ";
             cin.ignore();
             getline(cin, senha);

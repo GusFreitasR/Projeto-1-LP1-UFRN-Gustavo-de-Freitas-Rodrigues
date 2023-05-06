@@ -1,3 +1,6 @@
+2003
+Matheus
+Clinico geral
 2004
 Gustavo
 Cardiologia
@@ -10,12 +13,6 @@ Pneumologia
 2009
 Bailey
 Clinico geral
-2003
-Matheus
-Clinico geral
 2011
 Leandro
 Ortopedia
-2012
-Gabriel
-Clinico geral
