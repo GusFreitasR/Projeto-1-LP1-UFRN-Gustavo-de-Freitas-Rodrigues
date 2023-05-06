@@ -1,12 +1,21 @@
-2022
-Giovanna
-ematologia
-0
-
-
-2002
-Gustavo
-ermatologi
 2004
-Pedro
-ardiologia
+Gustavo
+Cardiologia
+2005
+Giovanna
+Neurologia
+2008
+Pablo
+Pneumologia
+2009
+Bailey
+Clinico geral
+2003
+Matheus
+Clinico geral
+2011
+Leandro
+Ortopedia
+2012
+Gabriel
+Clinico geral

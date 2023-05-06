@@ -38,8 +38,8 @@ void carregar_agenda()
 
 void add_agendamento(long long int id, string name_med, string horario)
 { // Adiciona um novo médico ao arquivo
-    if (f_agenda.is_open())
-    { // Verifica se dá pr abrir o arquivo
+    
+        ofstream f_agenda("agenda.txt", std::ios::app | std::ios::out);// Cria um novo arquivo para a escrita
         f_agenda << id << endl;
         f_agenda << name_med << endl;
         f_agenda << horario << endl;
@@ -47,11 +47,7 @@ void add_agendamento(long long int id, string name_med, string horario)
         agenda[id].horario = horario;
         f_agenda.close();
         cout << "Agendamento cadastrado ao sistema com sucesso!" << endl;
-    }
-    else
-    {
-        cout << "Erro ao tentar abrir o arquivo." << endl;
-    }
+   
 }
 
 void show_agendamento_by_name(string name_med)

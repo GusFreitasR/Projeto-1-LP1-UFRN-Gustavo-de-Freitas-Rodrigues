@@ -34,6 +34,7 @@ void carregar_medicos(){ // Carrega os valores dos médicos que já estavam no a
 }
 
 void add_medico(long long int id, string name, string especialidade){ // Adiciona um novo médico ao arquivo
+        ofstream f_medicos("medicos.txt", ios::out | ios::app);
         f_medicos << id << endl;
         f_medicos << name << endl;
         f_medicos << especialidade << endl;
@@ -45,7 +46,6 @@ void add_medico(long long int id, string name, string especialidade){ // Adicion
 }
 
 void list_medicos(){ // Listando todos os médicos do sistema
-    if(f_medicos.is_open()){
     cout << "\n####  Lista de médicos   ####\n\n";
     cout << "------------------------------------" << endl;
     for(auto i : medicos){
@@ -53,8 +53,7 @@ void list_medicos(){ // Listando todos os médicos do sistema
     cout << "Nome: "<< i.second.nome << endl;
     cout << "Especialidade: "<< i.second.especialidade << endl;
     cout << "------------------------------------" << endl;
-  }
-    }
+}
 }
 
 void count_specs(){ // Mostrando todas as especialidades do sistema juntamente com a quantidade de médicos de cada uma

@@ -12,16 +12,17 @@ void carry_dados() // Função para carregamento dos dados
 
 void menu_atendente() // Fazendo o menu com as opções do(a) atendente
 {
+    carry_dados();
     int opcao = -1;
     while (opcao != 0)
     {
         cout << "----------------------Menu do Atendente----------------------" << endl;
-        cout << "1. Listar médicos" << endl;
+        cout << "1. Listar medicos" << endl;
         cout << "2. Listar especialidades" << endl;
-        cout << "3. Agendar horário para médico" << endl;
-        cout << "4. Ver agendamentos de médico" << endl;
+        cout << "3. Agendar horerio para medico" << endl;
+        cout << "4. Ver agendamentos de medico" << endl;
         cout << "0. Sair" << endl;
-        cout << "Escolha uma opção: ";
+        cout << "Escolha uma opcao: ";
         cin >> opcao;
         long long int id;
         string name_medico, horario;
@@ -39,25 +40,27 @@ void menu_atendente() // Fazendo o menu com as opções do(a) atendente
             cout << "Primeiro, qual o seu cpf que deseja marcar consulta? Apenas numeros" << endl;
             cin >> id;
             cin.ignore();
-            cout << "Com qual medico você deseja marcar horario? " << endl;
+            cout << "Com qual medico voce deseja marcar horario? " << endl;
             getline(cin, name_medico);
             cout << "Otimo! Agora, em que horario deseja se consultar? " << endl;
-            cin.ignore();
             getline(cin, horario);
             add_agendamento(id, name_medico, horario);
+            carry_dados();
             break;
         case 4:
-            cout << "Qual medico você desejaria verificar os horarios? " << endl;
+            carry_dados();  
+            cout << "Qual medico voce desejaria verificar os horarios? " << endl;
             cin.ignore();
             getline(cin, name_med);
             show_agendamento_by_name(name_med);
+
             break;
         case 0:
             cout << "Saindo..." << endl;
             return;
             break;
         default:
-            cout << "Opçao invalida." << endl;
+            cout << "Opcao invalida." << endl;
             break;
         }
     }
@@ -98,11 +101,14 @@ void menu_gestor() // Fazendo o menu com as opções do(a) gestor(a)
             cin.ignore();
             getline(cin, name_medico);
             cout << "Otimo! Agora, Qual a especialidade dele(a)?" << endl;
-            cin.ignore();
             getline(cin, especialidade);
     
             add_medico(id, name_medico, especialidade);
+            atualizar_medicos();
+            
+            
             break;
+
         case 4:
 
             cout << "Qual medico você desejaria verificar os horarios? " << endl;
