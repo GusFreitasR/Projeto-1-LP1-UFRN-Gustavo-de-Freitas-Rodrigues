@@ -16,3 +16,6 @@ Clinico geral
 2011
 Leandro
 Ortopedia
+2012
+Pedro
+Nefrologia

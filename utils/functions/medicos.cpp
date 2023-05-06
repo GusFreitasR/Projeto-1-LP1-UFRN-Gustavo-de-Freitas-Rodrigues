@@ -46,10 +46,10 @@ void add_medico(long long int id, string name, string especialidade){ // Adicion
 }
 
 void list_medicos(){ // Listando todos os médicos do sistema
-    cout << "\n####  Lista de médicos   ####\n\n";
+    cout << "\n####  Lista de medicos   ####\n\n";
     cout << "------------------------------------" << endl;
     for(auto i : medicos){
-    cout << "Identificação: "<< i.first << endl;
+    cout << "Identificacao: "<< i.first << endl;
     cout << "Nome: "<< i.second.nome << endl;
     cout << "Especialidade: "<< i.second.especialidade << endl;
     cout << "------------------------------------" << endl;
@@ -69,7 +69,7 @@ void count_specs(){ // Mostrando todas as especialidades do sistema juntamente c
     cout << "*********************************************************************************" << endl;
     cout << "Ao todo, temos " << specs.size() << " especialidades, sendo elas: " << endl;
     for(auto i: specs){
-        cout << i.first << " com " << i.second << " médicos nessa especialidade "<< endl;
+        cout << i.first << " com " << i.second << " medicos nessa especialidade "<< endl;
         cout << "---------------------------------------------" << endl;
     }
 
